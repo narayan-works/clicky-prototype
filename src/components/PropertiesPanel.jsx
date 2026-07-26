@@ -29,7 +29,7 @@ export default function PropertiesPanel({
 
   // Shrinks the mini-preview text to fit as the typed overlay text gets
   // longer, instead of overflowing the fixed-size preview box/viewBox.
-  const previewText = text || 'SHIPPED';
+  const previewText = text || 'SHIPPING';
   const previewFontSize = Math.max(8, Math.min(20, 180 / (previewText.length * 0.6)));
 
   return (
@@ -119,7 +119,7 @@ export default function PropertiesPanel({
                   className="text-input"
                   value={text}
                   onChange={(e) => setConfig(prev => ({ ...prev, text: e.target.value }))}
-                  placeholder='type "shipped" here'
+                  placeholder='type "shipping" here'
                 />
               </div>
 

@@ -94,7 +94,7 @@ export default function App() {
 
     const newClip = {
       id: Date.now().toString(),
-      text: graphicConfig.text || 'SHIPPED',
+      text: graphicConfig.text || 'SHIPPING',
       font: graphicConfig.font,
       isBold: graphicConfig.isBold,
       isItalic: graphicConfig.isItalic,
