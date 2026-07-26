@@ -125,7 +125,7 @@
     .topnav-left {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 20px;
     }
 
     .topnav .brand {
@@ -145,7 +145,7 @@
 
     .topnav .links {
       display: flex;
-      gap: 22px;
+      gap: 14px;
     }
 
     .topnav .links a {
@@ -1582,7 +1582,21 @@
       justify-content: center;
       min-height: 22px;
       color: var(--ink-faint);
-      font-size: 15px;
+    }
+
+    .darrow svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+    }
+
+    .inline-arrow {
+      display: inline-block;
+      vertical-align: -1px;
+      margin: 0 5px;
+      color: var(--ink-faint);
+      width: 12px;
+      height: 12px;
     }
 
     .diagram-grid {
@@ -2763,25 +2777,25 @@
                 <div class="dt">Speech</div>
                 <div class="dd">User asks for a walkthrough</div>
               </div>
-              <div class="darrow">→</div>
+              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
               <div class="dbox">
                 <div class="dt">Model</div>
                 <div class="dd">Claude replies with <code style="font-size:11px">[STEPS:…]</code></div>
               </div>
-              <div class="darrow">→</div>
+              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
               <div class="dbox">
                 <div class="dt">Parse</div>
                 <div class="dd">TaskStep[] created, index 0 active</div>
               </div>
-              <div class="darrow">→</div>
+              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
               <div class="dbox">
                 <div class="dt">Render</div>
                 <div class="dd">Dot row mounts in notch HUD</div>
               </div>
             </div>
             <div class="diagram-loop">
-              <b>background loop</b> every 2s while idle → capture all screens → strict 3-state validator prompt → <code
-                style="font-size:11px">[STEP_CHECK:…]</code> → same parser updates the dot in place, no user action
+              <b>background loop</b> every 2s while idle <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> capture all screens <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> strict 3-state validator prompt <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> <code
+                style="font-size:11px">[STEP_CHECK:…]</code> <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> same parser updates the dot in place, no user action
               required
             </div>
           </div>
@@ -2997,17 +3011,17 @@
                 <div class="dt">Trigger sources</div>
                 <div class="dd">Keyword match · voice state · step outcome · manual</div>
               </div>
-              <div class="darrow">→</div>
+              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
               <div class="dbox">
                 <div class="dt">Targets</div>
                 <div class="dd">One channel set to 1.0, rest to 0.0</div>
               </div>
-              <div class="darrow">→</div>
+              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
               <div class="dbox">
                 <div class="dt">Look vector</div>
                 <div class="dd">Per-gesture formula shapes pupil / eye offset</div>
               </div>
-              <div class="darrow">→</div>
+              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
               <div class="dbox">
                 <div class="dt">Draw</div>
                 <div class="dd">Spherical projection + optional particles</div>
@@ -3038,7 +3052,7 @@
         to be working towards. This is a 5-day prototype I built as my pitch. Really hoping to work with
         you guys!
       </p>
-      <a class="pill dark" href="mailto:nashanah@alumni.cmu.edu"><span class="btn-label">let's talk ↗</span></a>
+      <a class="pill dark" href="mailto:nashanah@alumni.cmu.edu"><span class="btn-label">let's talk <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:11px; height:11px; margin-left:3px; vertical-align:-0.5px;"><path d="M4.5 11.5l7-7M11.5 11.5v-7h-7"/></svg></span></a>
     </section>
 
     <hr class="divider full-width" style="margin-top: 24px;" />
