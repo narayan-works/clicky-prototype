@@ -1403,9 +1403,9 @@
       box-sizing: border-box;
       text-align: left;
       transition: background 0.25s ease,
-                  border-color 0.25s ease,
-                  border-radius 0.25s ease,
-                  box-shadow 0.25s ease;
+        border-color 0.25s ease,
+        border-radius 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     /* Hovering on closed pill */
@@ -1482,8 +1482,15 @@
     }
 
     @keyframes docs-fade-in {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .prose {
@@ -2473,8 +2480,18 @@
         the product.
       </p>
       <div class="hero-ctas">
-        <a class="pill outline" href="#stepper"><span class="btn-label" style="display:inline-flex; align-items:center; gap:5px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>step tracker</span></a>
-        <a class="pill outline" href="#gestures"><span class="btn-label" style="display:inline-flex; align-items:center; gap:5px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>gestures</span></a>
+        <a class="pill outline" href="#stepper"><span class="btn-label"
+            style="display:inline-flex; align-items:center; gap:5px;"><svg width="12" height="12" viewBox="0 0 16 16"
+              fill="none" aria-hidden="true">
+              <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>step tracker</span></a>
+        <a class="pill outline" href="#gestures"><span class="btn-label"
+            style="display:inline-flex; align-items:center; gap:5px;"><svg width="12" height="12" viewBox="0 0 16 16"
+              fill="none" aria-hidden="true">
+              <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>gestures</span></a>
       </div>
     </div>
 
@@ -2767,13 +2784,20 @@
             <button type="button" class="docs-collapsible-trigger" aria-expanded="false">
               <div class="trigger-left">
                 <span class="trigger-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5A2.5 2.5 0 014.5 2H7v12H4.5A2.5 2.5 0 012 11.5v-7zM14 4.5A2.5 2.5 0 0011.5 2H9v12h2.5a2.5 2.5 0 002.5-2.5v-7z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M2 4.5A2.5 2.5 0 014.5 2H7v12H4.5A2.5 2.5 0 012 11.5v-7zM14 4.5A2.5 2.5 0 0011.5 2H9v12h2.5a2.5 2.5 0 002.5-2.5v-7z" />
+                  </svg>
                 </span>
                 <span class="trigger-label">Documentation & system design</span>
               </div>
               <div class="trigger-right">
                 <span class="action-hint">Expand</span>
-                <svg class="chevron-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+                <svg class="chevron-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6l4 4 4-4" />
+                </svg>
               </div>
             </button>
           </div>
@@ -2829,13 +2853,15 @@
                       <tr>
                         <td data-label="State">Pending, active</td>
                         <td data-label="Dot"><span class="swatch"><span class="dot"
-                              style="background:#3380FF33;border:1px solid #3380FF;"></span>accent ring + core</span></td>
+                              style="background:#3380FF33;border:1px solid #3380FF;"></span>accent ring + core</span>
+                        </td>
                         <td data-label="Connector into it">grey</td>
                         <td data-label="Detail card">"Follow the guidance on screen to complete this step."</td>
                       </tr>
                       <tr>
                         <td data-label="State">Success</td>
-                        <td data-label="Dot"><span class="swatch"><span class="dot" style="background:#34D399"></span>solid
+                        <td data-label="Dot"><span class="swatch"><span class="dot"
+                              style="background:#34D399"></span>solid
                             emerald +
                             check</span></td>
                         <td data-label="Connector into it">emerald</td>
@@ -2843,7 +2869,8 @@
                       </tr>
                       <tr>
                         <td data-label="State">Failed</td>
-                        <td data-label="Dot"><span class="swatch"><span class="dot" style="background:#E5484D"></span>solid
+                        <td data-label="Dot"><span class="swatch"><span class="dot"
+                              style="background:#E5484D"></span>solid
                             red + ✕</span></td>
                         <td data-label="Connector into it">grey (unpassed)</td>
                         <td data-label="Detail card">the specific mistake, in red, ≤15 words</td>
@@ -2885,7 +2912,8 @@
 
                 <div class="code-panel">
                   <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
-                      class="cdot"></span><span class="clabel">CompanionManager.swift — the model's contract, condensed</span>
+                      class="cdot"></span><span class="clabel">CompanionManager.swift — the model's contract,
+                      condensed</span>
                   </div>
                   <div class="code-body">
                     <span class="c-str">"here's how. "</span> + <span class="c-tag">[STEPS: Open the Assets catalog |
@@ -2918,25 +2946,45 @@
                       <div class="dt">Speech</div>
                       <div class="dd">User asks for a walkthrough</div>
                     </div>
-                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                      </svg></div>
                     <div class="dbox">
                       <div class="dt">Model</div>
                       <div class="dd">Claude replies with <code style="font-size:11px">[STEPS:…]</code></div>
                     </div>
-                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                      </svg></div>
                     <div class="dbox">
                       <div class="dt">Parse</div>
                       <div class="dd">TaskStep[] created, index 0 active</div>
                     </div>
-                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                      </svg></div>
                     <div class="dbox">
                       <div class="dt">Render</div>
                       <div class="dd">Dot row mounts in notch HUD</div>
                     </div>
                   </div>
                   <div class="diagram-loop">
-                    <b>background loop</b> every 2s while idle <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> capture all screens <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> strict 3-state validator prompt <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> <code
-                      style="font-size:11px">[STEP_CHECK:…]</code> <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> same parser updates the dot in place, no user action
+                    <b>background loop</b> every 2s while idle <svg class="inline-arrow" viewBox="0 0 16 16" fill="none"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                    </svg> capture all screens <svg class="inline-arrow" viewBox="0 0 16 16" fill="none"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                    </svg> strict 3-state validator prompt <svg class="inline-arrow" viewBox="0 0 16 16" fill="none"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                    </svg> <code style="font-size:11px">[STEP_CHECK:…]</code> <svg class="inline-arrow"
+                      viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                    </svg> same parser updates the dot in place, no user action
                     required
                   </div>
                 </div>
@@ -3010,13 +3058,20 @@
             <button type="button" class="docs-collapsible-trigger" aria-expanded="false">
               <div class="trigger-left">
                 <span class="trigger-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5A2.5 2.5 0 014.5 2H7v12H4.5A2.5 2.5 0 012 11.5v-7zM14 4.5A2.5 2.5 0 0011.5 2H9v12h2.5a2.5 2.5 0 002.5-2.5v-7z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M2 4.5A2.5 2.5 0 014.5 2H7v12H4.5A2.5 2.5 0 012 11.5v-7zM14 4.5A2.5 2.5 0 0011.5 2H9v12h2.5a2.5 2.5 0 002.5-2.5v-7z" />
+                  </svg>
                 </span>
                 <span class="trigger-label">Documentation & system design</span>
               </div>
               <div class="trigger-right">
                 <span class="action-hint">Expand</span>
-                <svg class="chevron-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+                <svg class="chevron-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6l4 4 4-4" />
+                </svg>
               </div>
             </button>
           </div>
@@ -3046,7 +3101,8 @@
                         <td data-label="Gesture"><span class="swatch"><span class="dot"
                               style="background:#34D399"></span><strong>Idle</strong></span></td>
                         <td data-label="Reads as">attentive, ambient</td>
-                        <td data-label="Motion" class="motion-col">Eyes follow the cursor when it's nearby; otherwise drift on
+                        <td data-label="Motion" class="motion-col">Eyes follow the cursor when it's nearby; otherwise
+                          drift on
                           small random saccades</td>
                         <td data-label="Duration">continuous</td>
                         <td data-label="Fires on">default state; resumed after every other gesture</td>
@@ -3056,7 +3112,8 @@
                               style="background:#3380FF"></span><strong>Yes /
                               Nod</strong></span></td>
                         <td data-label="Reads as">agreement, confirmation</td>
-                        <td data-label="Motion" class="motion-col">Pupils oscillate vertically, squint toward a horizontal
+                        <td data-label="Motion" class="motion-col">Pupils oscillate vertically, squint toward a
+                          horizontal
                           line</td>
                         <td data-label="Duration">2.1s</td>
                         <td data-label="Fires on">reply opens with "yes / yeah / correct…"; a step is marked done</td>
@@ -3066,7 +3123,8 @@
                               style="background:#E5484D"></span><strong>No /
                               Shake</strong></span></td>
                         <td data-label="Reads as">correction, disagreement</td>
-                        <td data-label="Motion" class="motion-col">Pupils oscillate horizontally, whole eye group drifts with
+                        <td data-label="Motion" class="motion-col">Pupils oscillate horizontally, whole eye group drifts
+                          with
                           them</td>
                         <td data-label="Duration">1.8s</td>
                         <td data-label="Fires on">reply opens with "no / nope / sorry…"; a step is marked failed</td>
@@ -3084,10 +3142,12 @@
                               style="background:#B26BFF"></span><strong>Yay /
                               Burst</strong></span></td>
                         <td data-label="Reads as">celebration</td>
-                        <td data-label="Motion" class="motion-col">Forced happy-squint, small vertical bounce, particle burst
+                        <td data-label="Motion" class="motion-col">Forced happy-squint, small vertical bounce, particle
+                          burst
                         </td>
                         <td data-label="Duration">1.8s</td>
-                        <td data-label="Fires on">reply opens with "awesome / perfect / congrats…"; all steps complete</td>
+                        <td data-label="Fires on">reply opens with "awesome / perfect / congrats…"; all steps complete
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -3102,7 +3162,8 @@
                 <div class="prose">
                   <strong>Two eye styles, one rig.</strong> Every gesture formula is written against a pupil position
                   and eye-group offset, not against a specific shape — so it drives either "Classic Googly" (a 3D
-                  sphere with a foreshortened pupil) or "Pill Capsule" (a rounded-rect iris) without any gesture-specific
+                  sphere with a foreshortened pupil) or "Pill Capsule" (a rounded-rect iris) without any
+                  gesture-specific
                   code branching by style.
                 </div>
               </div>
@@ -3142,7 +3203,8 @@
                   <div class="code-body">
                     nod = sin(t * 14) * 8 <span class="c-com">// vertical pupil oscillation</span><br>
                     shake = sin(t * 14) * 8 <span class="c-com">// horizontal pupil oscillation</span><br>
-                    think = sin(t * 3.5) * 5.5, look-up fixed at -9 <span class="c-com">// slow scan, lifted gaze</span><br>
+                    think = sin(t * 3.5) * 5.5, look-up fixed at -9 <span class="c-com">// slow scan, lifted
+                      gaze</span><br>
                     yay = -abs(sin(t * 12) * 5) <span class="c-com">// eye-group bounce, forces happy-squint</span>
                   </div>
                 </div>
@@ -3172,17 +3234,26 @@
                       <div class="dt">Trigger sources</div>
                       <div class="dd">Keyword match · voice state · step outcome · manual</div>
                     </div>
-                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                      </svg></div>
                     <div class="dbox">
                       <div class="dt">Targets</div>
                       <div class="dd">One channel set to 1.0, rest to 0.0</div>
                     </div>
-                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                      </svg></div>
                     <div class="dbox">
                       <div class="dt">Look vector</div>
                       <div class="dd">Per-gesture formula shapes pupil / eye offset</div>
                     </div>
-                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5" />
+                      </svg></div>
                     <div class="dbox">
                       <div class="dt">Draw</div>
                       <div class="dd">Spherical projection + optional particles</div>
@@ -3216,7 +3287,12 @@
         to be working towards. This is a 5-day prototype I built as my pitch. Really hoping to work with
         you guys!
       </p>
-      <a class="pill dark" href="mailto:nashanah@alumni.cmu.edu"><span class="btn-label" style="display:inline-flex; align-items:center; gap:5px;">let's talk <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="pill dark" href="mailto:nashanah@alumni.cmu.edu"><span class="btn-label"
+          style="display:inline-flex; align-items:center; gap:5px;">let's talk <svg width="12" height="12"
+            viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></span></a>
     </section>
 
     <hr class="divider full-width" style="margin-top: 24px;" />
@@ -3918,7 +3994,7 @@
                 }
               }
             }
-          } catch (e) {}
+          } catch (e) { }
         }
         window.addEventListener("load", checkHashCollapse);
         window.addEventListener("hashchange", checkHashCollapse);
