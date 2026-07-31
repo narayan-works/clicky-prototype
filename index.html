@@ -72,7 +72,7 @@
       background-size: 28px 28px;
       color: var(--ink);
       font-family: var(--sans);
-      line-height: 1.55;
+      line-height: 1.42;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -307,7 +307,7 @@
       background: var(--accent-soft);
       padding: 5px 11px;
       border-radius: 999px;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
       font-weight: 600;
     }
 
@@ -319,19 +319,20 @@
     }
 
     .hero p.lede {
-      margin-top: 14px;
+      margin-top: 10px;
       font-size: 15.5px;
       color: var(--ink-dim);
       max-width: 460px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.4;
     }
 
     .hero-ctas {
       display: flex;
       gap: 10px;
       justify-content: center;
-      margin-top: 26px;
+      margin-top: 18px;
     }
 
 
@@ -1222,6 +1223,9 @@
       transform: translateY(-50%);
       font-size: 36px;
       line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     @media (max-width: 960px) {
@@ -1236,7 +1240,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--ink-faint);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .feature-head h2 {
@@ -1247,11 +1251,12 @@
     .feature-dek {
       color: var(--ink-dim);
       font-size: 15px;
-      margin-top: 10px;
+      margin-top: 6px;
+      line-height: 1.4;
     }
 
     .block {
-      margin-top: 52px;
+      margin-top: 36px;
     }
 
     .block-eyebrow {
@@ -1263,7 +1268,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--accent-ink);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-weight: 650;
     }
 
@@ -1285,8 +1290,9 @@
     .block .block-intro {
       color: var(--ink-dim);
       font-size: 14.5px;
-      margin-top: 8px;
+      margin-top: 6px;
       max-width: 620px;
+      line-height: 1.4;
     }
 
     .section-hook {
@@ -1366,6 +1372,118 @@
 
     .close-cta .pill {
       margin-top: 14px;
+    }
+
+    /* Collapsible documentation dropdowns */
+    .docs-collapsible {
+      margin-top: 32px;
+      width: 100%;
+    }
+
+    .docs-collapsible-trigger-wrap {
+      width: 100%;
+    }
+
+    .docs-collapsible-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--paper-card);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 650;
+      color: var(--ink);
+      cursor: pointer;
+      user-select: none;
+      box-shadow: var(--shadow-sm);
+      box-sizing: border-box;
+      text-align: left;
+      transition: background 0.25s ease,
+                  border-color 0.25s ease,
+                  border-radius 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+
+    /* Hovering on closed pill */
+    .docs-collapsible-trigger:hover {
+      background: var(--paper-soft);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .docs-collapsible-trigger .trigger-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .docs-collapsible-trigger .trigger-icon {
+      color: var(--accent-ink);
+      display: flex;
+      align-items: center;
+    }
+
+    .docs-collapsible-trigger .trigger-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-dim);
+    }
+
+    .docs-collapsible-trigger .chevron-icon {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* EXPANDED STATE:
+       The pill outline morphs into a clean divider line at the bottom of the trigger bar.
+       Text and icons stay locked in the exact same location! */
+    .docs-collapsible.is-expanded .docs-collapsible-trigger {
+      background: transparent;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: var(--line);
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    /* HOVER IN EXPANDED STATE:
+       Hovering over the top divider header brings the pill outline and soft card background back! */
+    .docs-collapsible.is-expanded .docs-collapsible-trigger:hover {
+      background: var(--paper-soft);
+      border-color: var(--line-strong);
+      border-radius: var(--r);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .docs-collapsible.is-expanded .docs-collapsible-trigger .chevron-icon {
+      transform: rotate(180deg);
+    }
+
+    .docs-collapsible-content {
+      display: none;
+      margin-top: 16px;
+    }
+
+    .docs-collapsible.is-expanded .docs-collapsible-content {
+      display: block;
+      animation: docs-fade-in 0.25s ease-out;
+    }
+
+    @keyframes docs-fade-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .prose {
@@ -1496,6 +1614,7 @@
 
     .code-panel {
       margin-top: 16px;
+      margin-bottom: 20px;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: var(--shadow-sm);
@@ -2597,7 +2716,7 @@
     <section class="feature" id="stepper">
       <div class="feature-head left">
         <div class="feature-tag">01 — the progression stepper</div>
-        <h2>Step Tracker</h2>
+        <h2><span class="section-emoji" aria-hidden="true">📍</span>Step Tracker</h2>
         <p class="feature-dek">
           When someone asks Clicky to walk them through a task, each step gets tracked as a dot in the notch —
           one per atomic action, updating on its own as Claude watches the screen for evidence the step
@@ -2643,165 +2762,185 @@
           </div>
         </div>
 
-        <div class="block" id="stepper-interaction">
-          <span class="block-eyebrow">Interaction design</span>
-          <h3>A checklist that fills itself in</h3>
-          <p class="block-intro">
-            The stepper is deliberately quiet by default: a line of small dots connected by capsules, sitting
-            just under the notch's status text, easy to check with a glance and easy to ignore otherwise.
-          </p>
-
-          <div class="prose" style="margin-top:20px;">
-            <strong>Collapsed state.</strong> Only the dots show. Pending steps are a dim grey ring; the current
-            step gets a filled accent-blue ring with a small core, like a cursor blinking in place. Finished
-            steps fill solid emerald with a checkmark; a step Claude flags as a mistake fills solid red with an
-            Ⅹ. The connector between two dots only turns green once the step before it has actually passed —
-            so the fill of the whole row reads as literal progress, left to right.
-          </div>
-          <div class="prose">
-            <strong>Expanded state.</strong> Tapping the dot row opens a detail card
-            (<code>response 0.35 / damping 0.8</code>) showing the current step's title in accent blue, and one
-            line of body copy: encouragement while pending, the specific mistake in red if the last check failed,
-            or a small "party popper" banner across all-emerald once every step is done. The card is opt-in —
-            most people leave it collapsed and just watch the dots turn green.
-          </div>
-          <div class="prose">
-            <strong>It borrows the gesture vocabulary.</strong> A step turning green triggers the same
-            "Yes (Nod)" gesture as a spoken "yes" would; the final step completing fires "Yay (Burst)"; a step
-            Claude marks wrong fires "No (Shake)." The stepper and the gestures share the same reaction — see
-            <a href="#gestures">Gestures</a>.
-          </div>
-
-          <div class="tablewrap">
-            <table class="spec">
-              <thead>
-                <tr>
-                  <th>State</th>
-                  <th>Dot</th>
-                  <th>Connector into it</th>
-                  <th>Detail card</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="State">Pending, not yet active</td>
-                  <td data-label="Dot"><span class="swatch"><span class="dot"
-                        style="background:#EAE7DD;border:1px solid #C4C0B0;"></span>dim ring</span></td>
-                  <td data-label="Connector into it">grey</td>
-                  <td data-label="Detail card">—</td>
-                </tr>
-                <tr>
-                  <td data-label="State">Pending, active</td>
-                  <td data-label="Dot"><span class="swatch"><span class="dot"
-                        style="background:#3380FF33;border:1px solid #3380FF;"></span>accent ring + core</span></td>
-                  <td data-label="Connector into it">grey</td>
-                  <td data-label="Detail card">"Follow the guidance on screen to complete this step."</td>
-                </tr>
-                <tr>
-                  <td data-label="State">Success</td>
-                  <td data-label="Dot"><span class="swatch"><span class="dot" style="background:#34D399"></span>solid
-                      emerald +
-                      check</span></td>
-                  <td data-label="Connector into it">emerald</td>
-                  <td data-label="Detail card">—</td>
-                </tr>
-                <tr>
-                  <td data-label="State">Failed</td>
-                  <td data-label="Dot"><span class="swatch"><span class="dot" style="background:#E5484D"></span>solid
-                      red + ✕</span></td>
-                  <td data-label="Connector into it">grey (unpassed)</td>
-                  <td data-label="Detail card">the specific mistake, in red, ≤15 words</td>
-                </tr>
-                <tr>
-                  <td data-label="State">All steps complete</td>
-                  <td data-label="Dot">all solid emerald</td>
-                  <td data-label="Connector into it">all emerald</td>
-                  <td data-label="Detail card">party-popper banner, "ALL STEPS COMPLETED!"</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="block" id="stepper-system">
-          <span class="block-eyebrow">System design</span>
-          <h3>A text protocol</h3>
-          <p class="block-intro">
-            Claude's reply is plain speech with small bracket tags appended, which the client parses out
-            before the text is ever spoken aloud.
-          </p>
-
-          <div class="prose" style="margin-top:20px;">
-            <strong>Defining the plan.</strong> The system prompt asks Claude to break a task into 2–5 atomic,
-            single-interaction steps (one click, one menu open — never "open settings and click preferences" as
-            one step) and open with <code>[STEPS: Step 1 | Step 2 | Step 3]</code>. A regex in
-            <code>parseAndApplyStepperTags(from:)</code> pulls the titles out, and each becomes a
-            <code>TaskStep</code> with <code>status: .pending</code>.
-          </div>
-          <div class="prose">
-            <strong>Reporting progress.</strong> Every later reply can append exactly one of
-            <code>[STEP_CHECK:success]</code>, <code>[STEP_CHECK:fail:reason]</code>, or nothing at all (silently
-            pending). Success advances <code>activeStepIndex</code>; if that was the last step, the whole array
-            gets checked for completion. Every tag — <code>[POINT:…]</code>, <code>[STEPS:…]</code>, and
-            <code>[STEP_CHECK:…]</code> — is stripped from the text before it reaches text-to-speech, including
-            partially-streamed tags cut off mid-token, so nothing is ever read aloud by accident.
-          </div>
-
-          <div class="code-panel">
-            <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
-                class="cdot"></span><span class="clabel">CompanionManager.swift — the model's contract, condensed</span>
-            </div>
-            <div class="code-body">
-              <span class="c-str">"here's how. "</span> + <span class="c-tag">[STEPS: Open the Assets catalog |
-                Right-click in the empty area | Select 'Import...']</span><br>
-              <span class="c-str">"perfect! now right-click in the empty space. "</span> + <span
-                class="c-tag">[STEP_CHECK:success]</span><br>
-              <span class="c-str">"no, you need to click inside the Xcode window first. "</span> + <span
-                class="c-tag">[STEP_CHECK:fail:You clicked the desktop instead of Xcode]</span>
-            </div>
-          </div>
-
-          <div class="prose" style="margin-top:20px;">
-            <strong>The verification loop.</strong> <code>startParallelStepVerificationLoop()</code> runs
-            quietly in the background so the user never has to confirm each click by hand: while
-            <code>voiceState == .idle</code> and steps remain, it waits 2 seconds,
-            captures every connected screen as JPEG, and sends a narrow prompt to the same Claude
-            model — <em>output only one of the three tags, no reasoning</em> — with a strict rule that "not done
-            yet" must resolve to <code>pending</code>, never <code>fail</code>; failure is reserved for the user
-            visibly doing the wrong thing.
-          </div>
-          <div class="prose">
-            <strong>Guarding against races.</strong> The step index being checked is snapshotted before the
-            network call goes out. If the user speaks and the active step changes while that request is still
-            in flight, the eventual response is discarded, since it no longer matches the current step.
-          </div>
-
-          <div class="card diagram">
-            <div class="diagram-grid">
-              <div class="dbox">
-                <div class="dt">Speech</div>
-                <div class="dd">User asks for a walkthrough</div>
+        <div class="docs-collapsible" id="stepper-collapsible">
+          <div class="docs-collapsible-trigger-wrap">
+            <button type="button" class="docs-collapsible-trigger" aria-expanded="false">
+              <div class="trigger-left">
+                <span class="trigger-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5A2.5 2.5 0 014.5 2H7v12H4.5A2.5 2.5 0 012 11.5v-7zM14 4.5A2.5 2.5 0 0011.5 2H9v12h2.5a2.5 2.5 0 002.5-2.5v-7z"/></svg>
+                </span>
+                <span class="trigger-label">Documentation & system design</span>
               </div>
-              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
-              <div class="dbox">
-                <div class="dt">Model</div>
-                <div class="dd">Claude replies with <code style="font-size:11px">[STEPS:…]</code></div>
+              <div class="trigger-right">
+                <span class="action-hint">Expand</span>
+                <svg class="chevron-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
               </div>
-              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
-              <div class="dbox">
-                <div class="dt">Parse</div>
-                <div class="dd">TaskStep[] created, index 0 active</div>
+            </button>
+          </div>
+          <div class="docs-collapsible-content">
+            <div class="docs-collapsible-inner">
+              <div class="block" id="stepper-interaction">
+                <span class="block-eyebrow">Interaction design</span>
+                <h3>A checklist that fills itself in</h3>
+                <p class="block-intro">
+                  The stepper is deliberately quiet by default: a line of small dots connected by capsules, sitting
+                  just under the notch's status text, easy to check with a glance and easy to ignore otherwise.
+                </p>
+
+                <div class="prose" style="margin-top:20px;">
+                  <strong>Collapsed state.</strong> Only the dots show. Pending steps are a dim grey ring; the current
+                  step gets a filled accent-blue ring with a small core, like a cursor blinking in place. Finished
+                  steps fill solid emerald with a checkmark; a step Claude flags as a mistake fills solid red with an
+                  Ⅹ. The connector between two dots only turns green once the step before it has actually passed —
+                  so the fill of the whole row reads as literal progress, left to right.
+                </div>
+                <div class="prose">
+                  <strong>Expanded state.</strong> Tapping the dot row opens a detail card
+                  (<code>response 0.35 / damping 0.8</code>) showing the current step's title in accent blue, and one
+                  line of body copy: encouragement while pending, the specific mistake in red if the last check failed,
+                  or a small "party popper" banner across all-emerald once every step is done. The card is opt-in —
+                  most people leave it collapsed and just watch the dots turn green.
+                </div>
+                <div class="prose">
+                  <strong>It borrows the gesture vocabulary.</strong> A step turning green triggers the same
+                  "Yes (Nod)" gesture as a spoken "yes" would; the final step completing fires "Yay (Burst)"; a step
+                  Claude marks wrong fires "No (Shake)." The stepper and the gestures share the same reaction — see
+                  <a href="#gestures">Gestures</a>.
+                </div>
+
+                <div class="tablewrap">
+                  <table class="spec">
+                    <thead>
+                      <tr>
+                        <th>State</th>
+                        <th>Dot</th>
+                        <th>Connector into it</th>
+                        <th>Detail card</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="State">Pending, not yet active</td>
+                        <td data-label="Dot"><span class="swatch"><span class="dot"
+                              style="background:#EAE7DD;border:1px solid #C4C0B0;"></span>dim ring</span></td>
+                        <td data-label="Connector into it">grey</td>
+                        <td data-label="Detail card">—</td>
+                      </tr>
+                      <tr>
+                        <td data-label="State">Pending, active</td>
+                        <td data-label="Dot"><span class="swatch"><span class="dot"
+                              style="background:#3380FF33;border:1px solid #3380FF;"></span>accent ring + core</span></td>
+                        <td data-label="Connector into it">grey</td>
+                        <td data-label="Detail card">"Follow the guidance on screen to complete this step."</td>
+                      </tr>
+                      <tr>
+                        <td data-label="State">Success</td>
+                        <td data-label="Dot"><span class="swatch"><span class="dot" style="background:#34D399"></span>solid
+                            emerald +
+                            check</span></td>
+                        <td data-label="Connector into it">emerald</td>
+                        <td data-label="Detail card">—</td>
+                      </tr>
+                      <tr>
+                        <td data-label="State">Failed</td>
+                        <td data-label="Dot"><span class="swatch"><span class="dot" style="background:#E5484D"></span>solid
+                            red + ✕</span></td>
+                        <td data-label="Connector into it">grey (unpassed)</td>
+                        <td data-label="Detail card">the specific mistake, in red, ≤15 words</td>
+                      </tr>
+                      <tr>
+                        <td data-label="State">All steps complete</td>
+                        <td data-label="Dot">all solid emerald</td>
+                        <td data-label="Connector into it">all emerald</td>
+                        <td data-label="Detail card">party-popper banner, "ALL STEPS COMPLETED!"</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
-              <div class="dbox">
-                <div class="dt">Render</div>
-                <div class="dd">Dot row mounts in notch HUD</div>
+
+              <div class="block" id="stepper-system">
+                <span class="block-eyebrow">System design</span>
+                <h3>A text protocol</h3>
+                <p class="block-intro">
+                  Claude's reply is plain speech with small bracket tags appended, which the client parses out
+                  before the text is ever spoken aloud.
+                </p>
+
+                <div class="prose" style="margin-top:20px;">
+                  <strong>Defining the plan.</strong> The system prompt asks Claude to break a task into 2–5 atomic,
+                  single-interaction steps (one click, one menu open — never "open settings and click preferences" as
+                  one step) and open with <code>[STEPS: Step 1 | Step 2 | Step 3]</code>. A regex in
+                  <code>parseAndApplyStepperTags(from:)</code> pulls the titles out, and each becomes a
+                  <code>TaskStep</code> with <code>status: .pending</code>.
+                </div>
+                <div class="prose">
+                  <strong>Reporting progress.</strong> Every later reply can append exactly one of
+                  <code>[STEP_CHECK:success]</code>, <code>[STEP_CHECK:fail:reason]</code>, or nothing at all (silently
+                  pending). Success advances <code>activeStepIndex</code>; if that was the last step, the whole array
+                  gets checked for completion. Every tag — <code>[POINT:…]</code>, <code>[STEPS:…]</code>, and
+                  <code>[STEP_CHECK:…]</code> — is stripped from the text before it reaches text-to-speech, including
+                  partially-streamed tags cut off mid-token, so nothing is ever read aloud by accident.
+                </div>
+
+                <div class="code-panel">
+                  <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
+                      class="cdot"></span><span class="clabel">CompanionManager.swift — the model's contract, condensed</span>
+                  </div>
+                  <div class="code-body">
+                    <span class="c-str">"here's how. "</span> + <span class="c-tag">[STEPS: Open the Assets catalog |
+                      Right-click in the empty area | Select 'Import...']</span><br>
+                    <span class="c-str">"perfect! now right-click in the empty space. "</span> + <span
+                      class="c-tag">[STEP_CHECK:success]</span><br>
+                    <span class="c-str">"no, you need to click inside the Xcode window first. "</span> + <span
+                      class="c-tag">[STEP_CHECK:fail:You clicked the desktop instead of Xcode]</span>
+                  </div>
+                </div>
+
+                <div class="prose" style="margin-top:20px;">
+                  <strong>The verification loop.</strong> <code>startParallelStepVerificationLoop()</code> runs
+                  quietly in the background so the user never has to confirm each click by hand: while
+                  <code>voiceState == .idle</code> and steps remain, it waits 2 seconds,
+                  captures every connected screen as JPEG, and sends a narrow prompt to the same Claude
+                  model — <em>output only one of the three tags, no reasoning</em> — with a strict rule that "not done
+                  yet" must resolve to <code>pending</code>, never <code>fail</code>; failure is reserved for the user
+                  visibly doing the wrong thing.
+                </div>
+                <div class="prose">
+                  <strong>Guarding against races.</strong> The step index being checked is snapshotted before the
+                  network call goes out. If the user speaks and the active step changes while that request is still
+                  in flight, the eventual response is discarded, since it no longer matches the current step.
+                </div>
+
+                <div class="card diagram">
+                  <div class="diagram-grid">
+                    <div class="dbox">
+                      <div class="dt">Speech</div>
+                      <div class="dd">User asks for a walkthrough</div>
+                    </div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="dbox">
+                      <div class="dt">Model</div>
+                      <div class="dd">Claude replies with <code style="font-size:11px">[STEPS:…]</code></div>
+                    </div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="dbox">
+                      <div class="dt">Parse</div>
+                      <div class="dd">TaskStep[] created, index 0 active</div>
+                    </div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="dbox">
+                      <div class="dt">Render</div>
+                      <div class="dd">Dot row mounts in notch HUD</div>
+                    </div>
+                  </div>
+                  <div class="diagram-loop">
+                    <b>background loop</b> every 2s while idle <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> capture all screens <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> strict 3-state validator prompt <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> <code
+                      style="font-size:11px">[STEP_CHECK:…]</code> <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> same parser updates the dot in place, no user action
+                    required
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="diagram-loop">
-              <b>background loop</b> every 2s while idle <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> capture all screens <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> strict 3-state validator prompt <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> <code
-                style="font-size:11px">[STEP_CHECK:…]</code> <svg class="inline-arrow" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg> same parser updates the dot in place, no user action
-              required
             </div>
           </div>
         </div>
@@ -2814,7 +2953,7 @@
     <section class="feature" id="gestures">
       <div class="feature-head left">
         <div class="feature-tag">02 — kineticons</div>
-        <h2>Gestures</h2>
+        <h2><span class="section-emoji" aria-hidden="true">👁️</span>Gestures</h2>
         <p class="feature-dek">
           Clicky's only face is two small eyes in a camera notch, carrying five kinetic states — idle, nod,
           shake, thinking, and celebrate — built from one continuously-blended motion system.
@@ -2866,170 +3005,190 @@
           </div>
         </div>
 
-        <div class="block" id="gestures-interaction">
-          <span class="block-eyebrow">Interaction design</span>
-          <h3>Five states, one vocabulary</h3>
-          <p class="block-intro">
-            Each gesture is short, legible at a glance, and never blocks — a gesture can be interrupted by the
-            next one at any point, which matters because Clicky's reactions often need to overlap real speech.
-          </p>
-
-          <div class="tablewrap">
-            <table class="spec">
-              <thead>
-                <tr>
-                  <th>Gesture</th>
-                  <th>Reads as</th>
-                  <th>Motion</th>
-                  <th>Duration</th>
-                  <th>Fires on</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Gesture"><span class="swatch"><span class="dot"
-                        style="background:#34D399"></span><strong>Idle</strong></span></td>
-                  <td data-label="Reads as">attentive, ambient</td>
-                  <td data-label="Motion" class="motion-col">Eyes follow the cursor when it's nearby; otherwise drift on
-                    small random saccades</td>
-                  <td data-label="Duration">continuous</td>
-                  <td data-label="Fires on">default state; resumed after every other gesture</td>
-                </tr>
-                <tr>
-                  <td data-label="Gesture"><span class="swatch"><span class="dot"
-                        style="background:#3380FF"></span><strong>Yes /
-                        Nod</strong></span></td>
-                  <td data-label="Reads as">agreement, confirmation</td>
-                  <td data-label="Motion" class="motion-col">Pupils oscillate vertically, squint toward a horizontal
-                    line</td>
-                  <td data-label="Duration">2.1s</td>
-                  <td data-label="Fires on">reply opens with "yes / yeah / correct…"; a step is marked done</td>
-                </tr>
-                <tr>
-                  <td data-label="Gesture"><span class="swatch"><span class="dot"
-                        style="background:#E5484D"></span><strong>No /
-                        Shake</strong></span></td>
-                  <td data-label="Reads as">correction, disagreement</td>
-                  <td data-label="Motion" class="motion-col">Pupils oscillate horizontally, whole eye group drifts with
-                    them</td>
-                  <td data-label="Duration">1.8s</td>
-                  <td data-label="Fires on">reply opens with "no / nope / sorry…"; a step is marked failed</td>
-                </tr>
-                <tr>
-                  <td data-label="Gesture"><span class="swatch"><span class="dot"
-                        style="background:#F5A524"></span><strong>Thinking</strong></span></td>
-                  <td data-label="Reads as">processing, please wait</td>
-                  <td data-label="Motion" class="motion-col">Eyes lift and scan slowly left–right, looping</td>
-                  <td data-label="Duration">until resolved</td>
-                  <td data-label="Fires on">voice state enters <code>.processing</code></td>
-                </tr>
-                <tr>
-                  <td data-label="Gesture"><span class="swatch"><span class="dot"
-                        style="background:#B26BFF"></span><strong>Yay /
-                        Burst</strong></span></td>
-                  <td data-label="Reads as">celebration</td>
-                  <td data-label="Motion" class="motion-col">Forced happy-squint, small vertical bounce, particle burst
-                  </td>
-                  <td data-label="Duration">1.8s</td>
-                  <td data-label="Fires on">reply opens with "awesome / perfect / congrats…"; all steps complete</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="prose" style="margin-top:20px;">
-            <strong>Reading intent from speech.</strong> Unlike the stepper, gestures aren't chosen
-            by Claude explicitly — the client scans the first six words of the spoken reply against three small
-            word lists (agreement, correction, celebration) and fires the matching gesture itself. It's a
-            lightweight classifier: instant, local, and doesn't block TTS from starting.
-          </div>
-          <div class="prose">
-            <strong>Two eye styles, one rig.</strong> Every gesture formula is written against a pupil position
-            and eye-group offset, not against a specific shape — so it drives either "Classic Googly" (a 3D
-            sphere with a foreshortened pupil) or "Pill Capsule" (a rounded-rect iris) without any gesture-specific
-            code branching by style.
-          </div>
-        </div>
-
-        <div class="block" id="gestures-system">
-          <span class="block-eyebrow">System design</span>
-          <h3>Targets, weights, and a lerp</h3>
-          <p class="block-intro">
-            Nothing about a gesture snaps — every gesture is a target weight the render loop chases, frame
-            by frame.
-          </p>
-
-          <div class="prose" style="margin-top:20px;">
-            <strong>Targets vs. weights.</strong> <code>triggerGesture(type)</code> zeroes every target and sets
-            one to <code>1.0</code> instantly. But the values actually driving the drawing —
-            <code>weights.idle / .yes / .no / .think / .yay</code> — only move a fraction of the remaining
-            distance toward their targets each frame:
-          </div>
-          <div class="code-panel">
-            <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
-                class="cdot"></span><span class="clabel">render loop — 60fps</span></div>
-            <div class="code-body">weights[k] += (targets[k] - weights[k]) * <span class="c-kw">0.06</span> <span
-                class="c-com">// every frame, for all five channels</span></div>
-          </div>
-          <div class="prose">
-            At 0.06 per frame, a gesture reaches ~95% of full weight in about half a second — fast enough to
-            read as intentional, slow enough that two gestures can cross-fade smoothly. It also means a new
-            trigger can arrive mid-gesture and blend into it.
-          </div>
-          <div class="prose">
-            <strong>Per-gesture motion, written as pupil math.</strong> Once a channel has weight, its formula
-            contributes to the eyes' look vector before the frame is drawn:
-          </div>
-          <div class="code-panel">
-            <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
-                class="cdot"></span><span class="clabel">per-gesture formulas</span></div>
-            <div class="code-body">
-              nod = sin(t * 14) * 8 <span class="c-com">// vertical pupil oscillation</span><br>
-              shake = sin(t * 14) * 8 <span class="c-com">// horizontal pupil oscillation</span><br>
-              think = sin(t * 3.5) * 5.5, look-up fixed at -9 <span class="c-com">// slow scan, lifted gaze</span><br>
-              yay = -abs(sin(t * 12) * 5) <span class="c-com">// eye-group bounce, forces happy-squint</span>
-            </div>
-          </div>
-          <div class="prose">
-            <strong>Faking a sphere in 2D.</strong> The pupil's screen position and its squash both come from
-            the same look angle, which is what makes it read as a sphere on a flat canvas:
-          </div>
-          <div class="code-panel">
-            <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
-                class="cdot"></span><span class="clabel">spherical projection</span></div>
-            <div class="code-body">
-              angle = (look / 9) * 0.8 <span class="c-com">// look vector → rotation, radians</span><br>
-              pos = maxOffset * sin(angle) / sin(0.8) <span class="c-com">// spherical projection → pupil
-                position</span><br>
-              squash = pupilRadius * cos(angle) <span class="c-com">// foreshortening → pupil width/height</span>
-            </div>
-          </div>
-          <div class="prose">
-            <strong>The burst.</strong> "Yay" additionally spawns a small particle system on trigger — 20–30
-            points launched in a downward cone, accelerated by a constant gravity term, fading by a randomized
-            alpha decay per particle so no two bursts look identical.
-          </div>
-
-          <div class="card diagram">
-            <div class="diagram-grid" style="grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;">
-              <div class="dbox">
-                <div class="dt">Trigger sources</div>
-                <div class="dd">Keyword match · voice state · step outcome · manual</div>
+        <div class="docs-collapsible" id="gestures-collapsible">
+          <div class="docs-collapsible-trigger-wrap">
+            <button type="button" class="docs-collapsible-trigger" aria-expanded="false">
+              <div class="trigger-left">
+                <span class="trigger-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5A2.5 2.5 0 014.5 2H7v12H4.5A2.5 2.5 0 012 11.5v-7zM14 4.5A2.5 2.5 0 0011.5 2H9v12h2.5a2.5 2.5 0 002.5-2.5v-7z"/></svg>
+                </span>
+                <span class="trigger-label">Documentation & system design</span>
               </div>
-              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
-              <div class="dbox">
-                <div class="dt">Targets</div>
-                <div class="dd">One channel set to 1.0, rest to 0.0</div>
+              <div class="trigger-right">
+                <span class="action-hint">Expand</span>
+                <svg class="chevron-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
               </div>
-              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
-              <div class="dbox">
-                <div class="dt">Look vector</div>
-                <div class="dd">Per-gesture formula shapes pupil / eye offset</div>
+            </button>
+          </div>
+          <div class="docs-collapsible-content">
+            <div class="docs-collapsible-inner">
+              <div class="block" id="gestures-interaction">
+                <span class="block-eyebrow">Interaction design</span>
+                <h3>Five states, one vocabulary</h3>
+                <p class="block-intro">
+                  Each gesture is short, legible at a glance, and never blocks — a gesture can be interrupted by the
+                  next one at any point, which matters because Clicky's reactions often need to overlap real speech.
+                </p>
+
+                <div class="tablewrap">
+                  <table class="spec">
+                    <thead>
+                      <tr>
+                        <th>Gesture</th>
+                        <th>Reads as</th>
+                        <th>Motion</th>
+                        <th>Duration</th>
+                        <th>Fires on</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="Gesture"><span class="swatch"><span class="dot"
+                              style="background:#34D399"></span><strong>Idle</strong></span></td>
+                        <td data-label="Reads as">attentive, ambient</td>
+                        <td data-label="Motion" class="motion-col">Eyes follow the cursor when it's nearby; otherwise drift on
+                          small random saccades</td>
+                        <td data-label="Duration">continuous</td>
+                        <td data-label="Fires on">default state; resumed after every other gesture</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Gesture"><span class="swatch"><span class="dot"
+                              style="background:#3380FF"></span><strong>Yes /
+                              Nod</strong></span></td>
+                        <td data-label="Reads as">agreement, confirmation</td>
+                        <td data-label="Motion" class="motion-col">Pupils oscillate vertically, squint toward a horizontal
+                          line</td>
+                        <td data-label="Duration">2.1s</td>
+                        <td data-label="Fires on">reply opens with "yes / yeah / correct…"; a step is marked done</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Gesture"><span class="swatch"><span class="dot"
+                              style="background:#E5484D"></span><strong>No /
+                              Shake</strong></span></td>
+                        <td data-label="Reads as">correction, disagreement</td>
+                        <td data-label="Motion" class="motion-col">Pupils oscillate horizontally, whole eye group drifts with
+                          them</td>
+                        <td data-label="Duration">1.8s</td>
+                        <td data-label="Fires on">reply opens with "no / nope / sorry…"; a step is marked failed</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Gesture"><span class="swatch"><span class="dot"
+                              style="background:#F5A524"></span><strong>Thinking</strong></span></td>
+                        <td data-label="Reads as">processing, please wait</td>
+                        <td data-label="Motion" class="motion-col">Eyes lift and scan slowly left–right, looping</td>
+                        <td data-label="Duration">until resolved</td>
+                        <td data-label="Fires on">voice state enters <code>.processing</code></td>
+                      </tr>
+                      <tr>
+                        <td data-label="Gesture"><span class="swatch"><span class="dot"
+                              style="background:#B26BFF"></span><strong>Yay /
+                              Burst</strong></span></td>
+                        <td data-label="Reads as">celebration</td>
+                        <td data-label="Motion" class="motion-col">Forced happy-squint, small vertical bounce, particle burst
+                        </td>
+                        <td data-label="Duration">1.8s</td>
+                        <td data-label="Fires on">reply opens with "awesome / perfect / congrats…"; all steps complete</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="prose" style="margin-top:20px;">
+                  <strong>Reading intent from speech.</strong> Unlike the stepper, gestures aren't chosen
+                  by Claude explicitly — the client scans the first six words of the spoken reply against three small
+                  word lists (agreement, correction, celebration) and fires the matching gesture itself. It's a
+                  lightweight classifier: instant, local, and doesn't block TTS from starting.
+                </div>
+                <div class="prose">
+                  <strong>Two eye styles, one rig.</strong> Every gesture formula is written against a pupil position
+                  and eye-group offset, not against a specific shape — so it drives either "Classic Googly" (a 3D
+                  sphere with a foreshortened pupil) or "Pill Capsule" (a rounded-rect iris) without any gesture-specific
+                  code branching by style.
+                </div>
               </div>
-              <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
-              <div class="dbox">
-                <div class="dt">Draw</div>
-                <div class="dd">Spherical projection + optional particles</div>
+
+              <div class="block" id="gestures-system">
+                <span class="block-eyebrow">System design</span>
+                <h3>Targets, weights, and a lerp</h3>
+                <p class="block-intro">
+                  Nothing about a gesture snaps — every gesture is a target weight the render loop chases, frame
+                  by frame.
+                </p>
+
+                <div class="prose" style="margin-top:20px;">
+                  <strong>Targets vs. weights.</strong> <code>triggerGesture(type)</code> zeroes every target and sets
+                  one to <code>1.0</code> instantly. But the values actually driving the drawing —
+                  <code>weights.idle / .yes / .no / .think / .yay</code> — only move a fraction of the remaining
+                  distance toward their targets each frame:
+                </div>
+                <div class="code-panel">
+                  <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
+                      class="cdot"></span><span class="clabel">render loop — 60fps</span></div>
+                  <div class="code-body">weights[k] += (targets[k] - weights[k]) * <span class="c-kw">0.06</span> <span
+                      class="c-com">// every frame, for all five channels</span></div>
+                </div>
+                <div class="prose">
+                  At 0.06 per frame, a gesture reaches ~95% of full weight in about half a second — fast enough to
+                  read as intentional, slow enough that two gestures can cross-fade smoothly. It also means a new
+                  trigger can arrive mid-gesture and blend into it.
+                </div>
+                <div class="prose">
+                  <strong>Per-gesture motion, written as pupil math.</strong> Once a channel has weight, its formula
+                  contributes to the eyes' look vector before the frame is drawn:
+                </div>
+                <div class="code-panel">
+                  <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
+                      class="cdot"></span><span class="clabel">per-gesture formulas</span></div>
+                  <div class="code-body">
+                    nod = sin(t * 14) * 8 <span class="c-com">// vertical pupil oscillation</span><br>
+                    shake = sin(t * 14) * 8 <span class="c-com">// horizontal pupil oscillation</span><br>
+                    think = sin(t * 3.5) * 5.5, look-up fixed at -9 <span class="c-com">// slow scan, lifted gaze</span><br>
+                    yay = -abs(sin(t * 12) * 5) <span class="c-com">// eye-group bounce, forces happy-squint</span>
+                  </div>
+                </div>
+                <div class="prose">
+                  <strong>Faking a sphere in 2D.</strong> The pupil's screen position and its squash both come from
+                  the same look angle, which is what makes it read as a sphere on a flat canvas:
+                </div>
+                <div class="code-panel">
+                  <div class="code-titlebar"><span class="cdot"></span><span class="cdot"></span><span
+                      class="cdot"></span><span class="clabel">spherical projection</span></div>
+                  <div class="code-body">
+                    angle = (look / 9) * 0.8 <span class="c-com">// look vector → rotation, radians</span><br>
+                    pos = maxOffset * sin(angle) / sin(0.8) <span class="c-com">// spherical projection → pupil
+                      position</span><br>
+                    squash = pupilRadius * cos(angle) <span class="c-com">// foreshortening → pupil width/height</span>
+                  </div>
+                </div>
+                <div class="prose">
+                  <strong>The burst.</strong> "Yay" additionally spawns a small particle system on trigger — 20–30
+                  points launched in a downward cone, accelerated by a constant gravity term, fading by a randomized
+                  alpha decay per particle so no two bursts look identical.
+                </div>
+
+                <div class="card diagram">
+                  <div class="diagram-grid" style="grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;">
+                    <div class="dbox">
+                      <div class="dt">Trigger sources</div>
+                      <div class="dd">Keyword match · voice state · step outcome · manual</div>
+                    </div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="dbox">
+                      <div class="dt">Targets</div>
+                      <div class="dd">One channel set to 1.0, rest to 0.0</div>
+                    </div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="dbox">
+                      <div class="dt">Look vector</div>
+                      <div class="dd">Per-gesture formula shapes pupil / eye offset</div>
+                    </div>
+                    <div class="darrow"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h11M9.5 3.5L14 8l-4.5 4.5"/></svg></div>
+                    <div class="dbox">
+                      <div class="dt">Draw</div>
+                      <div class="dd">Spherical projection + optional particles</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -3727,6 +3886,44 @@
         requestAnimationFrame(frame);
       })();
 
+      /* ============================ DOCS COLLAPSIBLE DROPDOWNS ============================ */
+      (function initDocsCollapsibles() {
+        document.querySelectorAll(".docs-collapsible-trigger").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var collapsible = btn.closest(".docs-collapsible");
+            if (!collapsible) return;
+            var isExpanded = collapsible.classList.toggle("is-expanded");
+            btn.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+            var hintEl = btn.querySelector(".action-hint");
+            if (hintEl) {
+              hintEl.textContent = isExpanded ? "Collapse" : "Expand";
+            }
+          });
+        });
+
+        function checkHashCollapse() {
+          var hash = window.location.hash;
+          if (!hash) return;
+          try {
+            var target = document.querySelector(hash);
+            if (target) {
+              var collapsible = target.closest(".docs-collapsible");
+              if (collapsible && !collapsible.classList.contains("is-expanded")) {
+                collapsible.classList.add("is-expanded");
+                var btn = collapsible.querySelector(".docs-collapsible-trigger");
+                if (btn) {
+                  btn.setAttribute("aria-expanded", "true");
+                  var hintEl = btn.querySelector(".action-hint");
+                  if (hintEl) hintEl.textContent = "Collapse";
+                }
+              }
+            }
+          } catch (e) {}
+        }
+        window.addEventListener("load", checkHashCollapse);
+        window.addEventListener("hashchange", checkHashCollapse);
+      })();
+
       /* ============================ HERO PROMPT (placeholder click reaction) ============================ */
       /* ============================ HERO DEMO SEQUENCE (step 1) ============================ */
       (function heroDemo() {
@@ -4080,14 +4277,13 @@
               }
             },
             {
-              // The text field starts empty with an inviting placeholder by
-              // default (App.jsx's graphicConfig.text starts as ''). The
-              // pointer never flies here even on "how?" — the field sits in a
-              // tightly packed form (8px to the next row), so landing below it
-              // would collide with the Bold/Italic buttons right underneath.
               findEl: function () { return iframeDoc.querySelector(".text-input"); },
               triggerType: "input",
-              onArrive: function () { showHowPrompt(function () { showCaptionPersistent("type something here!"); }); },
+              onArrive: function (el) {
+                showHowPrompt(function () {
+                  flyPointerTo(el).then(function () { showCaptionPersistent("type something here!"); });
+                });
+              },
               onDone: function () {
                 if (window.__heroNotchGesture) window.__heroNotchGesture(1); // Yes (Nod)
                 setStepDetail("STEP 3: CHOOSE THE FILL OUT STYLE", "Follow the guidance on screen to complete this step.");
@@ -4189,6 +4385,7 @@
                 if (window.__heroNotchGesture) window.__heroNotchGesture(2); // No (Shake)
                 setStepDetail("STEP " + (index + 1) + " — WRONG CLICK", "that's not this step — ⌘Z to undo, then try again.");
                 showCaptionPersistent("⌘Z (cmd+z) to undo!");
+                hideHowPrompt();
                 showUndoButton(iframeDoc, performUndo);
               }
               function cleanup() {

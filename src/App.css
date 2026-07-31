@@ -347,7 +347,7 @@
 
 /* Properties Panel */
 .panel-props {
-  width: 250px;
+  width: 290px;
 }
 
 .props-body {
@@ -424,7 +424,7 @@
   background: #141518;
   padding: 2px;
   border-radius: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   border: 1px solid #28292e;
 }
 
@@ -446,7 +446,7 @@
 }
 
 .mini-preview-container {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .mini-preview-box {
@@ -461,7 +461,7 @@
 }
 
 .controls-form .form-row {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .text-input {
@@ -469,11 +469,18 @@
   background: #141518;
   border: 1px solid #33353c;
   color: #fff;
-  font-size: 9.5px;
-  padding: 4px 7px;
-  border-radius: 3px;
+  font-size: 11.5px;
+  padding: 8px 10px;
+  border-radius: 5px;
   outline: none;
   font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.text-input:focus {
+  border-color: #3380ff;
+  box-shadow: 0 0 0 2px rgba(51, 128, 255, 0.25);
 }
 
 .font-line {
